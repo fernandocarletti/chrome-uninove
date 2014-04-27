@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Uninove Login",
+  "description": "Automatically perform login at Uninove's student portal",
+  "version": "0.0.1",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.uninove.br/seu/aluno/"
+      ],
+      "js": [
+        "jquery-2.1.0.min.js",
+        "uninove-login.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://*.uninove.br/seu/aluno/"
+  ],
+  "options_page": "options.html"
+}
